@@ -42,7 +42,7 @@ export default function Navbar() {
 
   // Close menu when pressing Escape key
   useEffect(() => {
-    const handleEscKey = (e) => {
+    const handleEscKey = (e:KeyboardEvent) => {
       if (e.key === "Escape" && isMenuOpen) {
         setIsMenuOpen(false);
       }
