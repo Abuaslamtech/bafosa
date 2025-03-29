@@ -27,17 +27,14 @@ import { saveAs } from "file-saver";
 import { useRef } from "react";
 import { arrayBuffer } from "stream/consumers";
 
-// Import the existing flyer component
-// import ProfessionalEventFlyer from "../components/ProfessionalEventFlyer";
-
 export default function SallahConvention() {
   const [name, setName] = useState("");
-  const [photo, setPhoto] = useState(null);
-  const [photoPreview, setPhotoPreview] = useState(null);
+  const [photo, setPhoto] = useState<File | null>(null);
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [showFlyer, setShowFlyer] = useState(false);
   const [formStatus, setFormStatus] = useState({ message: "", type: "" });
   const [activeTab, setActiveTab] = useState("about");
-  const flyerRef = useRef(null);
+  const flyerRef = useRef<HTMLDivElement>(null);
 
   const dataURLToBlob = (dataUrl: string) => {
     let byteString: string;
@@ -58,6 +55,11 @@ export default function SallahConvention() {
       ia[i] = byteString.charCodeAt(i);
 
     return new Blob([ab], { type: MIMEString });
+  };
+  //   error type
+  type errorType = {
+    message: string;
+    type: string;
   };
   const saveFlyer = () => {
     if (flyerRef.current === null) {
@@ -86,9 +88,10 @@ export default function SallahConvention() {
               type: "success",
             });
           } catch (error) {
-            console.error("Error in blob conversion", error);
+            const errorType = error as errorType;
+            console.error("Error in blob conversion", errorType);
             setFormStatus({
-              message: "Error converting image: " + error.message,
+              message: "Error converting image: " + errorType.message,
               type: "error",
             });
           }
@@ -103,19 +106,22 @@ export default function SallahConvention() {
     }, 300);
   };
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setPhoto(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    setPhoto(file);
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      if (typeof reader.result === "string") {
         setPhotoPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
+      }
+    };
+    reader.readAsDataURL(file);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     if (!name.trim()) {
@@ -736,7 +742,7 @@ export default function SallahConvention() {
                         <button
                           type="button"
                           onClick={() =>
-                            document.getElementById("photo").click()
+                            document.getElementById("photo")?.click()
                           }
                           className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors"
                         >
