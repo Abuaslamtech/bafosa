@@ -170,53 +170,57 @@ export default function SallahConvention() {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Navigation Tabs */}
-        <div className="flex  border-b border-[#8a7b6c]/30 mb-8 pt-4 flex-row justify-between ">
+        {/* Navigation Tabs - Modified for mobile scrolling */}
+        <div className="flex overflow-x-auto pb-2 sm:overflow-visible sm:flex-wrap sm:border-b sm:border-[#8a7b6c]/30 mb-6 pt-4 scrollbar-hide">
           <button
-            className={`px-4 py-2 font-medium flex flex-col gap-2 justify-center items-center ${
+            className={`flex-shrink-0 px-3 py-2 font-medium flex flex-col gap-1 justify-center items-center min-w-max ${
               activeTab === "about"
                 ? "text-[#573f23] border-b-2 border-[#573f23]"
                 : "text-[#8a7b6c] hover:text-[#573f23]"
             }`}
             onClick={() => setActiveTab("about")}
           >
-            <MoonStar /> Convention
+            <MoonStar className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Convention</span>
           </button>
           <button
-            className={`px-4 py-2 font-medium flex flex-col gap-2 justify-center items-center ${
+            className={`flex-shrink-0 px-3 py-2 font-medium flex flex-col gap-1 justify-center items-center min-w-max ${
               activeTab === "schedule"
                 ? "text-[#573f23] border-b-2 border-[#573f23]"
                 : "text-[#8a7b6c] hover:text-[#573f23]"
             }`}
             onClick={() => setActiveTab("schedule")}
           >
-            <LayoutList /> Schedule
+            <LayoutList className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Schedule</span>
           </button>
           <button
-            className={`px-4 py-2 font-medium flex flex-col gap-2 justify-center items-center ${
+            className={`flex-shrink-0 px-3 py-2 font-medium flex flex-col gap-1 justify-center items-center min-w-max ${
               activeTab === "contribute"
                 ? "text-[#573f23] border-b-2 border-[#573f23]"
                 : "text-[#8a7b6c] hover:text-[#573f23]"
             }`}
             onClick={() => setActiveTab("contribute")}
           >
-            <HandCoins /> Contribute
+            <HandCoins className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Contribute</span>
           </button>
           <button
-            className={`px-4 py-2 font-medium flex flex-col gap-2 justify-center items-center ${
+            className={`flex-shrink-0 px-3 py-2 font-medium flex flex-col gap-1 justify-center items-center min-w-max ${
               activeTab === "flyer"
                 ? "text-[#573f23] border-b-2 border-[#573f23]"
                 : "text-[#8a7b6c] hover:text-[#573f23]"
             }`}
             onClick={() => setActiveTab("flyer")}
           >
-            <ImagePlus /> Flyer
+            <ImagePlus className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Flyer</span>
           </button>
         </div>
 
         {/* About Tab Content */}
         {activeTab === "about" && (
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h2 className="text-2xl font-bold text-[#573f23] mb-4">
                 About Our Sallah Convention
@@ -365,7 +369,7 @@ export default function SallahConvention() {
                     <span className="font-bold text-[#573f23]">
                       9:30 AM - 10:00 AM
                     </span>
-                    <span className="text-sm text-[#8a7b6c] italic">
+                    <span className="text-sm text-[#8a7b6c] italic mt-1 sm:mt-0">
                       Registration & Welcome Tea
                     </span>
                   </div>
@@ -723,7 +727,7 @@ export default function SallahConvention() {
                     >
                       Your Photo
                     </label>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="border-2 border-dashed border-[#8a7b6c]/30 rounded-lg p-4 flex flex-col items-center justify-center text-center">
                         <Upload className="text-[#573f23] w-8 h-8 mb-2" />
                         <p className="text-sm text-[#573f23]/80 mb-2">
@@ -775,17 +779,17 @@ export default function SallahConvention() {
                     </div>
                   </div>
 
-                  <div className="flex justify-end space-x-4">
+                  <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4">
                     <button
                       type="button"
                       onClick={resetForm}
-                      className="px-4 py-2 border border-[#573f23] text-[#573f23] rounded-md hover:bg-[#f0ede5] transition-colors"
+                      className="px-4 py-2 border border-[#573f23] text-[#573f23] rounded-md hover:bg-[#f0ede5] transition-colors w-full sm:w-auto"
                     >
                       Reset
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors"
+                      className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors w-full sm:w-auto"
                     >
                       Generate Flyer
                     </button>
@@ -807,19 +811,19 @@ export default function SallahConvention() {
                   <Flyer name={name} photoPreview={photoPreview} />
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4">
                   <button
+                    type="button"
                     onClick={resetForm}
-                    className="px-4 py-2 border border-[#573f23] text-[#573f23] rounded-md hover:bg-[#f0ede5] transition-colors"
+                    className="px-4 py-2 border border-[#573f23] text-[#573f23] rounded-md hover:bg-[#f0ede5] transition-colors w-full sm:w-auto"
                   >
-                    Create Another
+                    Reset
                   </button>
-
                   <button
-                    onClick={saveFlyer}
-                    className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors"
+                    type="submit"
+                    className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors w-full sm:w-auto"
                   >
-                    Download Flyer
+                    Generate Flyer
                   </button>
                 </div>
               </div>

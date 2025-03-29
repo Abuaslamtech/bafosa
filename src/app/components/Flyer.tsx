@@ -17,14 +17,14 @@ function Flyer(
       <div className="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-[#573f23]">
         {/* Header Section */}
         <div className="bg-[#573f23] text-[#f0ede5] py-4 px-3 text-center font-sans">
-          <h1 className="text-2xl font-extrabold tracking-tight uppercase">
+          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight uppercase">
             Baba Ahmad Foundation
           </h1>
-          <h2 className="text-lg font-semibold opacity-90 mt-1">
+          <h2 className="text-base sm:text-lg font-semibold opacity-90 mt-1">
             Old Students' Association (BAFOSA)
           </h2>
           <div className="bg-[#ffffff] rounded-xl p-2 mt-2">
-            <h3 className="flex flex-row justify-center gap-2 text-[#573f23] text-xl font-bold text-center">
+            <h3 className="flex flex-row justify-center gap-2 text-[#573f23] text-lg sm:text-xl font-bold text-center">
               Annual Sallah Waleema{" "}
               <span>
                 <PartyPopper size={20} />
@@ -54,7 +54,7 @@ function Flyer(
           </div>
         </div>
         {/* Event Details */}
-        <div className="p-4 bg-[#f0ede5]">
+        <div className="p-3 sm:p-4 bg-[#f0ede5]">
           <div className="grid grid-cols-3 gap-1">
             <div className="flex flex-col items-center justify-center bg-white rounded-xl p-2 shadow-md">
               <Calendar className="text-[#573f23] w-5 h-5" />
