@@ -51,12 +51,13 @@ export default function SwiperComponent() {
   return (
     <Swiper
       // install Swiper modules
-      modules={[A11y, Autoplay]}
+      modules={[A11y, Autoplay,]}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
       }}
       slidesPerView={1}
+      watchSlidesProgress={true}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
       className="w-full h-[300px]"
@@ -68,7 +69,10 @@ export default function SwiperComponent() {
             alt={image.alt}
             width={600}
             height={300}
+            quality={80}
+            loading="eager"
             className="rounded-xl flex m-auto"
+            priority
           />
         </SwiperSlide>
       ))}
