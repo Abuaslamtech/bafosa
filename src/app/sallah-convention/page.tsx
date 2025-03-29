@@ -817,13 +817,14 @@ export default function SallahConvention() {
                     onClick={resetForm}
                     className="px-4 py-2 border border-[#573f23] text-[#573f23] rounded-md hover:bg-[#f0ede5] transition-colors w-full sm:w-auto"
                   >
-                    Reset
+                    Generate Another One
                   </button>
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={saveFlyer}
                     className="px-4 py-2 bg-[#573f23] text-white rounded-md hover:bg-[#573f23]/90 transition-colors w-full sm:w-auto"
                   >
-                    Generate Flyer
+                    Download Flyer
                   </button>
                 </div>
               </div>
