@@ -63,9 +63,8 @@ export default function SallahConvention() {
     if (flyerRef.current === null) {
       return;
     }
-
     setTimeout(() => {
-      toPng(flyerRef.current, {
+      toPng(flyerRef.current!, {
         cacheBust: true,
         quality: 1,
         pixelRatio: 2,
