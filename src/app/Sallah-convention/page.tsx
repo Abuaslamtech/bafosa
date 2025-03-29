@@ -121,7 +121,7 @@ export default function SallahConvention() {
     reader.readAsDataURL(file);
   };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!name.trim()) {
