@@ -26,7 +26,7 @@ function Flyer(
                 Old Students' Association
               </h2>
             </div>
-            <div className="bg-[#ffffff] rounded-lg p-1 px-4">
+            <div className="bg-[#ffffff] rounded-sm p-1 px-4">
               <h3 className="text-[#573f23] text-sm font-bold flex items-center gap-1">
                 Sallah Waleema <PartyPopper size={16} />
               </h3>
@@ -51,7 +51,7 @@ function Flyer(
                 <span className="text-[#f0ede5] text-base">Photo</span>
               </div>
             )}
-            <div className=" rounded-sm border-b-8 border-[#f0ede5] bg-[#573f23] bg-opacity-70 p-1">
+            <div className="absolute bottom-0 left-0 right-0  border-b-8 border-[#f0ede5] bg-[#573f23] bg-opacity-70 p-1">
               <h3 className="text-[#f0ede5] text-sm font-bold text-center truncate font-sans">
                 {name || "Your Name Here"}
               </h3>
@@ -61,19 +61,19 @@ function Flyer(
           {/* Event Details Section */}
           <div className="w-1/2 p-2 bg-[#f0ede5]">
             <div className="space-y-1">
-              <div className="flex items-center bg-white rounded-lg p-1 shadow-sm">
+              <div className="flex items-center bg-white rounded-sm p-1 shadow-sm">
                 <Calendar className="text-[#573f23] w-4 h-4 mr-1" />
                 <span className="text-[#573f23] text-xs font-medium">
                   1 Day After Eid
                 </span>
               </div>
-              <div className="flex items-center bg-white rounded-lg p-1 shadow-sm">
+              <div className="flex items-center bg-white rounded-sm p-1 shadow-sm">
                 <Clock className="text-[#573f23] w-4 h-4 mr-1" />
                 <span className="text-[#573f23] text-xs font-medium">
                   9:30 AM
                 </span>
               </div>
-              <div className="flex items-center bg-white rounded-lg p-1 shadow-sm">
+              <div className="flex items-center bg-white rounded-sm p-1 shadow-sm">
                 <MapPin className="text-[#573f23] w-4 h-4 mr-1" />
                 <span className="text-[#573f23] text-xs font-medium">
                   Exams Hall
@@ -82,7 +82,7 @@ function Flyer(
             </div>
 
             {/* Leadership Section */}
-            <div className="mt-2 text-center bg-[#8a7b6c] rounded-lg p-1">
+            <div className="mt-2 text-center bg-[#8a7b6c] rounded-sm p-1">
               <p className="text-[#f0ede5] text-xs uppercase tracking-wider font-sans">
                 Under the Leadership of
               </p>
