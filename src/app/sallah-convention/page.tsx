@@ -166,6 +166,7 @@ export default function SallahConvention() {
         title="Annual Sallah Convention"
         info="Join BAFOSA for a day of celebration, networking, and giving back to our community"
         btnTitle="Generate Flyer"
+        btnlick={() => setActiveTab("flyer")}
       />
 
       {/* Main Content */}

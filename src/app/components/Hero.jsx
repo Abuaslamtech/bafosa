@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Hero({title,info,btnTitle }) {
+export default function Hero({title,info,btnTitle, btnlick }) {
   return (
     <header
         className="relative py-8 bg-cover bg-center"
@@ -17,7 +17,7 @@ export default function Hero({title,info,btnTitle }) {
             <p className="text-xl text-[#f0ede5] font-bold max-w-2xl mx-auto ">
              {info}
             </p>
-            <button className="hover:bg-[#f0ede5] bg-[#573f23] border-white border-2 text-white hover:text-[#573f23] px-8 py-3 rounded-full text-xl hover:bg-opacity-90 transition">
+            <button onClick={btnlick} className="hover:bg-[#f0ede5] bg-[#573f23] border-white border-2 text-white hover:text-[#573f23] px-8 py-3 rounded-full text-xl hover:bg-opacity-90 transition">
               {btnTitle}
             </button>
           </div>
